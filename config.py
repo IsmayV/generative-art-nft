@@ -1,6 +1,6 @@
 # This file MUST be configured in order for the code to run properly
 
-# Make sure you put all your input images into an 'assets' folder. 
+# Make sure you put all your input images into an 'assets' folder.
 # Each layer (or category) of images must be put in a folder of its own.
 
 # CONFIG is an array of objects where each object represents a layer
@@ -13,12 +13,12 @@
 # 4. required: If the particular layer is required (True) or optional (False). The first layer must always be set to true.
 # 5. rarity_weights: Denotes the rarity distribution of traits. It can take on three types of values.
 #       - None: This makes all the traits defined in the layer equally rare (or common)
-#       - "random": Assigns rarity weights at random. 
-#       - array: An array of numbers where each number represents a weight. 
+#       - "random": Assigns rarity weights at random.
+#       - array: An array of numbers where each number represents a weight.
 #                If required is True, this array must be equal to the number of images in the layer directory. The first number is  the weight of the first image (in alphabetical order) and so on...
 #                If required is False, this array must be equal to one plus the number of images in the layer directory. The first number is the weight of having no image at all for this layer. The second number is the weight of the first image and so on...
 
-# Be sure to check out the tutorial in the README for more details.                
+# Be sure to check out the tutorial in the README for more details.
 
 CONFIG = [
     {
@@ -30,51 +30,44 @@ CONFIG = [
     },
     {
         'id': 2,
-        'name': 'body',
-        'directory': 'Body',
+        'name': 'base',
+        'directory': 'Base',
         'required': True,
-        'rarity_weights': None,
+        'rarity_weights': [20, 5, 5, 15, 20],
     },
     {
         'id': 3,
-        'name': 'eyes',
-        'directory': 'Expressions',
-        'required': True,
-        'rarity_weights': None,
+        'name': 'vines',
+        'directory': 'Hanging Foliage',
+        'required': False,
+        'rarity_weights': [30, 5, 10, 20, 20],
     },
     {
         'id': 4,
-        'name': 'head_gear',
-        'directory': 'Head Gear',
-        'required': False,
+        'name': 'underground',
+        'directory': 'Underground',
+        'required': True,
         'rarity_weights': None,
     },
     {
         'id': 5,
-        'name': 'clothes',
-        'directory': 'Shirt',
+        'name': 'extra',
+        'directory': 'Extra Element',
         'required': False,
-        'rarity_weights': None,
+        'rarity_weights': [50, 5, 20, 5, 15],
     },
     {
         'id': 6,
-        'name': 'held_item',
-        'directory': 'Misc',
+        'name': 'trees',
+        'directory': 'Trees',
         'required': True,
         'rarity_weights': None,
     },
     {
         'id': 7,
-        'name': 'hands',
-        'directory': 'Hands',
+        'name': 'foliage',
+        'directory': 'Ground Element',
         'required': True,
-        'rarity_weights': None,
-    },
-    {
-        'id': 8,
-        'name': 'wristband',
-        'directory': 'Wristband',
-        'required': False,
         'rarity_weights': None,
     },
 ]
